@@ -42,11 +42,16 @@ body {
 }
 
 .card {
+	width: 15rem;
 	padding: 2em;
 	background-color: white;
 	border-radius: 4px;
 	box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1),
 		0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+.card img {
+	width: 5rem;
 }
 
 .cards {
