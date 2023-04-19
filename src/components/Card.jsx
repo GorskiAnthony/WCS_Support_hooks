@@ -1,11 +1,11 @@
-const Card = (props) => {
+const Card = ({ flag, name, population, capital, region }) => {
 	return (
 		<div className="card">
-			<img src={props.flag} alt={props.name} />
-			<h1>{props.name}</h1>
-			<p>Population : {props.population}</p>
-			<p>Région : {props.region} </p>
-			<p>Capitale : {props.capital}</p>
+			<img src={flag} alt={name} />
+			<h1>{name}</h1>
+			<p>Population : {population}</p>
+			<p>Région : {region} </p>
+			<p>Capitale : {capital}</p>
 		</div>
 	);
 };
