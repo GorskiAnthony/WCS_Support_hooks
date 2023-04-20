@@ -1,8 +1,12 @@
+import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Navbar from "./components/Navbar";
-import Filter from "./components/Filter";
-import Card from "./components/Card";
 import axios from "axios";
+
+/** Pages */
+import Home from "./pages/Home";
+import Country from "./pages/Country";
+
+/** App.css */
 import "./App.css";
 
 function App() {
@@ -23,43 +27,17 @@ function App() {
 			.catch((e) => console.error(e));
 	}, []);
 
-	/**
-	 * Create = POST
-	 * Read = GET
-	 * Update = PUT
-	 * Delete = DELETE
-	 */
-
 	return (
-		<>
-			<Navbar />
-			<Filter />
-			<div className="app">
-				<div className="cards">
-					{countries.map((country, id) => (
-						<Card
-							key={id}
-							flag={country.flags.png}
-							name={country.name.common}
-							population={country.population}
-							capital={country.capital}
-							region={country.region}
-						/>
-					))}
-					{/* {countries.map((country) => {
-				return (
-					<Card
-						flag="https://picsum.photos/200/300"
-						name="Germany"
-						population="20000"
-						capital="Tambouktou"
-						region="Europe"
-					/>
-				)
-			})} */}
-				</div>
-			</div>
-		</>
+		<Routes>
+			<Route path="/" element={<Home countries={countries} />} />
+			{/**
+			 * Il me faut une route qui a cette tête
+			 * /BARBADOS
+			 * avec `BARBADOS` qui peut changer.
+			 * l'information qui va prendre en charge ce changement s'appel `country`
+			 */}
+			<Route path="/:country" element={<Country />} />
+		</Routes>
 	);
 }
 

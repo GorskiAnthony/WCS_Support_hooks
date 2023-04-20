@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Card = ({ flag, name, population, capital, region }) => {
 	return (
 		<div className="card">
@@ -5,7 +7,7 @@ const Card = ({ flag, name, population, capital, region }) => {
 				<img src={flag} alt={name} />
 			</div>
 			<div className="info">
-				<h1>{name}</h1>
+				<Link to={`/${name}`}>{name}</Link>
 				<p>
 					<strong> Population :</strong> {population}
 				</p>
