@@ -1,6 +1,6 @@
 const Navbar = () => {
 	return (
-		<nav>
+		<nav className="nav">
 			<div>Where in the world?</div>
 			<button>🌑 Dark mode</button>
 		</nav>

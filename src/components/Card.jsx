@@ -1,11 +1,21 @@
 const Card = ({ flag, name, population, capital, region }) => {
 	return (
 		<div className="card">
-			<img src={flag} alt={name} />
-			<h1>{name}</h1>
-			<p>Population : {population}</p>
-			<p>Région : {region} </p>
-			<p>Capitale : {capital}</p>
+			<div className="card-img">
+				<img src={flag} alt={name} />
+			</div>
+			<div className="info">
+				<h1>{name}</h1>
+				<p>
+					<strong> Population :</strong> {population}
+				</p>
+				<p>
+					<strong>Région :</strong> {region}{" "}
+				</p>
+				<p>
+					<strong>Capitale :</strong> {capital}
+				</p>
+			</div>
 		</div>
 	);
 };

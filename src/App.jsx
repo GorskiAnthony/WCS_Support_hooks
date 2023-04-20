@@ -23,8 +23,6 @@ function App() {
 			.catch((e) => console.error(e));
 	}, []);
 
-	console.log(countries);
-
 	/**
 	 * Create = POST
 	 * Read = GET
@@ -33,22 +31,22 @@ function App() {
 	 */
 
 	return (
-		<div>
+		<>
 			<Navbar />
 			<Filter />
-
-			<div className="cards">
-				{countries.map((country, id) => (
-					<Card
-						key={id}
-						flag={country.flags.png}
-						name={country.name.common}
-						population={country.population}
-						capital={country.capital}
-						region={country.region}
-					/>
-				))}
-				{/* {countries.map((country) => {
+			<div className="app">
+				<div className="cards">
+					{countries.map((country, id) => (
+						<Card
+							key={id}
+							flag={country.flags.png}
+							name={country.name.common}
+							population={country.population}
+							capital={country.capital}
+							region={country.region}
+						/>
+					))}
+					{/* {countries.map((country) => {
 				return (
 					<Card
 						flag="https://picsum.photos/200/300"
@@ -59,8 +57,9 @@ function App() {
 					/>
 				)
 			})} */}
+				</div>
 			</div>
-		</div>
+		</>
 	);
 }
 
