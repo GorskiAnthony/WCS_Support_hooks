@@ -18,10 +18,18 @@ const Country = () => {
 		axios
 			.get(API + country)
 			.then((res) => {
+				console.log(res);
 				setName(res.data[0]);
 				setIsLoading(false);
 			})
-			.catch((e) => console.error("ton erreur : ", e));
+			.catch((e) =>
+				console.error(
+					"ton erreur : ",
+					e.response.status,
+					" | ",
+					e.response.statusText
+				)
+			);
 		// .finally(() => {
 		// 	setIsLoading(false);
 		// })
@@ -34,6 +42,7 @@ const Country = () => {
 	 * 4/ démontage
 	 */
 
+	const toto = name.flags ? name.flags : ""
 	if (isLoading) return <div>Je charge</div>;
 
 	return (
